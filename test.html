@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+
+		<style>
+
+			h2,h3{
+				font-family: Arial, Helvetica, sans-serif;
+			}
+
+			html,body{
+				height: 100%;
+				margin: 0;
+			}
+
+			button{
+				min-width: 40px;
+				margin: 3px;
+				border-width: 0px;
+				background-color: rgb(0, 121, 128);
+				color: white;
+				padding: 5px;
+				border-radius: 3px;
+				transition: 0.2s ease-in-out;
+			}
+
+			button:hover{
+				opacity: 0.75;
+				cursor: pointer;
+			}
+
+			.mainPanel{
+				text-align: center;
+				background-color: rgb(222, 244, 255);
+				padding: 10px;
+				width: 300px;
+				border-radius: 10px;
+			}
+
+			.screen{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100%;
+				background-color: black;
+				margin: 0px;
+
+			}
+
+			.displayPanel{
+				background-color:  rgb(222, 244, 255);
+				padding: 10px;
+			}
+
+			.inputPanel{
+				display: flex;
+				background-color: rgb(243, 252, 255);
+				padding: 10px;
+				border-radius: 10px;
+			}
+
+
+			#displayValue{
+				width: 90%;
+				border-width: 0px;
+				padding: 8px;
+				border-radius: 5px;
+				border-color: rgb(17, 164, 255);
+				border-width: 1px;
+				font-family: Arial, Helvetica, sans-serif;
+				cursor: pointer;
+			}
+
+		</style>
+
+
+	</head>
+
+	<body>
+		<div class="screen">
+			<div class="mainPanel">
+
+				<h2>Simple Calculator</h2>
+				<h3>by Suman Mukherjee</h3>
+
+				<div class="displayPanel">
+					<input type="text" value="0" 	id="displayValue">
+				</div>
+
+
+				<div class="inputPanel">
+					<div class="numberPanel">
+					<button onclick="
+						addToEquation('1 ');
+					">1</button>
+
+					<button onclick="
+					addToEquation('2 ');
+					">2</button>
+
+					<button onclick="
+					addToEquation('3 ');
+					">3</button>
+
+					<button onclick="
+					addToEquation('4 ');
+					">4</button>
+
+					<button onclick="
+					addToEquation('5 ');
+					">5</button>
+
+					<button onclick="
+					addToEquation('6 ');
+					">6</button>
+
+					<button onclick="
+					addToEquation('7 ');
+					">7</button>
+
+					<button onclick="
+					addToEquation('8 ');
+					">8</button>
+
+					<button onclick="
+					addToEquation('9 ');
+					">9</button>
+
+					<button onclick="
+					addToEquation('0 ');
+					">0</button>
+
+					<button onclick="
+					addToEquation('. ');
+					">.</button>
+
+					<button onclick="
+							calc.value = calc.value.slice(0,-2);
+
+					">DEL</button>
+
+				</div>
+
+
+				<div class="symbolPanel">
+					<button onclick="
+					addToEquation('+ ');
+					">+</button>
+
+					<button onclick="
+					addToEquation('- ');
+					">-</button>
+
+					<button onclick="
+						addToEquation('* ');
+					">x</button>
+
+					<button onclick="
+					addToEquation('/ ');
+					">/</button>
+
+					<button onclick="
+					addToEquation('( ');
+					">(</button>
+
+					<button onclick="
+					addToEquation(') ');
+					">)</button>
+
+					<button onclick="
+					addToEquation('< ');
+					"><</button>
+
+					<button onclick="
+					addToEquation('> ');
+					">></button>
+
+					<button onclick="
+							calc.value = '0';
+					">CLR</button>
+
+					<button onclick="
+							try{
+									calc.value = eval(calc.value.replace(/\s+/g,''));
+							}
+							catch(err){
+									calc.value = 'You Stupid?';
+							}
+							
+					">=</button>
+				</div>
+				</div>
+			</div>
+
+		</div>
+
+
+		<script>
+			
+		let calc = document.getElementById('displayValue')
+
+		function addToEquation(eq){
+		if(calc.value=='0')
+		{
+		calc.value = eq;
+		}
+		else
+		{
+		calc.value += eq;
+		}
+		}
+
+		</script>
+
+	</body>
+</html>
